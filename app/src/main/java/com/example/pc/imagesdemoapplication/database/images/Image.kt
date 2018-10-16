@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
 /**
- * Created by Hasan.Awada on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 @Entity(tableName = "images")
 class Image {

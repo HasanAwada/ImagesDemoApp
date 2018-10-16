@@ -4,7 +4,7 @@ import android.arch.persistence.room.*
 import io.reactivex.Maybe
 
 /**
- * Created by Hasan.Awada on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 @Dao
 abstract class ImageDao {

@@ -6,7 +6,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
 /**
- * Created by Pc on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 object RetrofitClient {
     fun getClient(): Retrofit {

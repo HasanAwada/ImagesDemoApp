@@ -16,7 +16,7 @@ import java.io.InputStream;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by Pc on 10/15/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 @GlideModule
 public class MyAppGlideModule extends AppGlideModule {

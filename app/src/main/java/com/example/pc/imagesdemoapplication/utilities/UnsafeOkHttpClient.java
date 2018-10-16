@@ -11,7 +11,7 @@ import javax.security.cert.CertificateException;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by Pc on 10/15/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 
 public class UnsafeOkHttpClient {

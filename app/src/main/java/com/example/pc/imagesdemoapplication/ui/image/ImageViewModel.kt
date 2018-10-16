@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 
 /**
- * Created by Hasan.Awada on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 class ImageViewModel(private val imageRepository: ImageRepository) : ViewModel() {
     fun getImages(): Observable<List<Image>>? {

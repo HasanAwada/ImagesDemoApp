@@ -8,7 +8,7 @@ import com.example.pc.imagesdemoapplication.database.images.Image
 import com.example.pc.imagesdemoapplication.database.images.ImageDao
 
 /**
- * Created by Hasan.Awada on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 @Database(entities = [(Image::class)], version = 1, exportSchema = false)
 abstract class ApplicationDatabase : RoomDatabase() {

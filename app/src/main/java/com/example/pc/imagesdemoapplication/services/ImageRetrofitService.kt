@@ -5,7 +5,7 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 
 /**
- * Created by Hasan.Awada on 10/12/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 interface ImageRetrofitService {
 

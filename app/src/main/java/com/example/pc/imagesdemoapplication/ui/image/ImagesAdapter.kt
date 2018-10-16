@@ -11,7 +11,7 @@ import com.example.pc.imagesdemoapplication.database.images.Image
 import com.example.pc.imagesdemoapplication.utilities.Helper
 
 /**
- * Created by Hasan.Awada on 10/15/2018.
+ * Created by Hasan.Awada on 10/16/2018.
  */
 class ImagesAdapter(private val mContext: Context, private val images: MutableList<Image>) : BaseAdapter() {
 
