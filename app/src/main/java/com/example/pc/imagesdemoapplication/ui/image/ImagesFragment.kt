@@ -48,31 +48,33 @@ class ImagesFragment : MvvmFragment() {
 
     private fun getImages() {
         subscribe(imageViewModel?.getImages()?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())?.subscribe({
-            displayImages(it)
+            displayImages(it as MutableList<Image>)
         }))
     }
 
-    private fun displayImages(images: List<Image>) {
+    private fun displayImages(images: MutableList<Image>) {
         context.let {
-            images.let {
-                var length = images?.size
-                Log.d("***TEST***", "images list size: ==> $length")
+            if (images.size > 0) {
+                var allImages: MutableList<Image> = images
 
-                gvImages.adapter = ImagesAdapter(context!!, images)
+                if (gvImages.adapter != null) {
+                    allImages = (gvImages.adapter as ImagesAdapter).getItems()
+                    allImages.addAll(images)
+                    allImages = allImages.distinctBy {
+                        it.Id
+                    } as MutableList<Image>
+                }
+
+                gvImages.adapter = ImagesAdapter(context!!, allImages)
                 gvImages.isNestedScrollingEnabled = true
                 gvImages.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-                    openImageViewer(images[position].Id)
+                    openImageViewer(allImages[position].Id)
                 }
-                var ids = ""
-                for(image in images){
-                        ids += (" " + image.Id)
-                }
-                Log.d("***TEST***", "ids ==> $ids")
             }
         }
     }
 
-    private fun openImageViewer(imageId: Int){
+    private fun openImageViewer(imageId: Int) {
         val pop = ImageViewerFragment.newInstance(imageId)
         pop.show(activity?.supportFragmentManager, "image_viewer")
     }

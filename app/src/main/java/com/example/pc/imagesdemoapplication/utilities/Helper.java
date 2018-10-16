@@ -28,7 +28,7 @@ public class Helper {
         try {
             RequestOptions options = new RequestOptions()
                     .centerCrop()
-                    .placeholder(R.drawable.images)
+                    .placeholder(R.drawable.loading)
                     .error(R.drawable.images)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .override(500, 1000)
@@ -50,7 +50,7 @@ public class Helper {
 
             RequestOptions options = new RequestOptions()
                     .centerCrop()
-                    .placeholder(R.drawable.images)
+                    .placeholder(R.drawable.loading)
                     .error(R.drawable.images)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
 //                    .override(500, 1000)

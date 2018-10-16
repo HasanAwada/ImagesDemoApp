@@ -13,10 +13,14 @@ import com.example.pc.imagesdemoapplication.utilities.Helper
 /**
  * Created by Hasan.Awada on 10/15/2018.
  */
-class ImagesAdapter(private val mContext: Context, private val images: List<Image>) : BaseAdapter() {
+class ImagesAdapter(private val mContext: Context, private val images: MutableList<Image>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return images.size
+    }
+
+    public fun getItems(): MutableList<Image> {
+        return images
     }
 
     override fun getItem(position: Int): Any? {

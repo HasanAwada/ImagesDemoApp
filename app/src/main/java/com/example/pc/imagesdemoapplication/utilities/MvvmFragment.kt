@@ -15,7 +15,7 @@ open class MvvmFragment : Fragment() {
     private val subscriptions = CompositeDisposable()
 
     fun subscribe(disposable: Disposable?): Disposable? {
-        subscriptions.add(disposable)
+        subscriptions.add(disposable!!)
         return disposable
     }
 
