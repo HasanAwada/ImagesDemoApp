@@ -4,10 +4,12 @@ package com.example.pc.imagesdemoapplication.ui.image
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import com.example.pc.imagesdemoapplication.ImagesDemoApplication
 
 import com.example.pc.imagesdemoapplication.R
@@ -55,8 +57,12 @@ class ImagesFragment : MvvmFragment() {
             images.let {
                 var length = images?.size
                 Log.d("***TEST***", "images list size: ==> $length")
+
                 gvImages.adapter = ImagesAdapter(context!!, images)
                 gvImages.isNestedScrollingEnabled = true
+                gvImages.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+                    openImageViewer(images[position].Id)
+                }
                 var ids = ""
                 for(image in images){
                         ids += (" " + image.Id)
@@ -64,6 +70,11 @@ class ImagesFragment : MvvmFragment() {
                 Log.d("***TEST***", "ids ==> $ids")
             }
         }
+    }
+
+    private fun openImageViewer(imageId: Int){
+        val pop = ImageViewerFragment.newInstance(imageId)
+        pop.show(activity?.supportFragmentManager, "image_viewer")
     }
 
     companion object {

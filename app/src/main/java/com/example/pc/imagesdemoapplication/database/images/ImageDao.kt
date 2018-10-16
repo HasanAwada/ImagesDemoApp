@@ -13,7 +13,7 @@ abstract class ImageDao {
     abstract fun getImages(): Maybe<List<Image>>
 
     @Query("SELECT * FROM images WHERE id=:imageId")
-    abstract fun getImageById(imageId: Int): Maybe<Image>
+    abstract fun getImageById(imageId: Int?): Maybe<Image>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insertImages(images: List<Image>)

@@ -10,6 +10,11 @@ import java.util.*
  */
 class ImageRepository(private val imageDao: ImageDao, private val imageRetrofitService: ImageRetrofitService?) {
 
+    fun getImageById(imageId: Int?): Observable<Image>?{
+        val image = imageDao.getImageById(imageId)
+        return image.toObservable()
+    }
+
     fun getImages(): Observable<List<Image>>? {
         try {
 //            return getImagesFromAPI()?.doOnComplete {

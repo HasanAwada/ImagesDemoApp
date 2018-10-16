@@ -13,4 +13,8 @@ class ImageViewModel(private val imageRepository: ImageRepository) : ViewModel()
     fun getImages(): Observable<List<Image>>? {
         return imageRepository.getImages()
     }
+
+    fun getImageById(imageId: Int?): Observable<Image>?{
+        return imageRepository.getImageById(imageId)
+    }
 }

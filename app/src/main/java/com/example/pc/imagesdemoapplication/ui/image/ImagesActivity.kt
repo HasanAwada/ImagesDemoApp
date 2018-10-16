@@ -22,4 +22,6 @@ class ImagesActivity : AppCompatActivity() {
         var fragment = ImagesFragment.newInstance()
         supportFragmentManager.beginTransaction().add(R.id.container, fragment, "").disallowAddToBackStack().commit()
     }
+
+
 }
