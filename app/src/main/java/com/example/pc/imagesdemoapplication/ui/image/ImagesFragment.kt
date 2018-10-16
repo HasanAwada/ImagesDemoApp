@@ -4,6 +4,7 @@ package com.example.pc.imagesdemoapplication.ui.image
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,6 @@ import kotlinx.android.synthetic.main.fragment_images.*
  */
 class ImagesFragment : MvvmFragment() {
 
-    private var imagesList: MutableList<Image>? = null
     private var imageViewModel: ImageViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,28 +39,30 @@ class ImagesFragment : MvvmFragment() {
         return inflater.inflate(R.layout.fragment_images, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun onStart() {
         super.onStart()
         getImages()
     }
 
     private fun getImages() {
-
         subscribe(imageViewModel?.getImages()?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())?.subscribe({
-            imagesList = it as MutableList<Image>
-            displayImages()
+            displayImages(it)
         }))
-
     }
 
-    private fun displayImages() {
+    private fun displayImages(images: List<Image>) {
         context.let {
-            gvImages.adapter = ImagesAdapter(context!!, imagesList as List<Image>)
-            gvImages.isNestedScrollingEnabled = true
+            images.let {
+                var length = images?.size
+                Log.d("***TEST***", "images list size: ==> $length")
+                gvImages.adapter = ImagesAdapter(context!!, images)
+                gvImages.isNestedScrollingEnabled = true
+                var ids = ""
+                for(image in images){
+                        ids += (" " + image.Id)
+                }
+                Log.d("***TEST***", "ids ==> $ids")
+            }
         }
     }
 

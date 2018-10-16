@@ -2,7 +2,7 @@ package com.example.pc.imagesdemoapplication
 
 import android.app.Application
 import com.example.pc.imagesdemoapplication.database.ApplicationDatabase
-import com.example.pc.imagesdemoapplication.database.ImageRepository
+import com.example.pc.imagesdemoapplication.database.images.ImageRepository
 import com.example.pc.imagesdemoapplication.utilities.ApiUtils
 
 /**

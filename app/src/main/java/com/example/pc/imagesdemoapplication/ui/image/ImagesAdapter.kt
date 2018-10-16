@@ -37,10 +37,10 @@ class ImagesAdapter(private val mContext: Context, private val images: List<Imag
             view = mInflater.inflate(R.layout.custom_image_view, null)
         }
 
-        Helper.loadImage(mContext, view!!.findViewById(R.id.ivImage), imageModel.link) {
+        Helper.loadImage(mContext, view?.findViewById(R.id.ivImage), imageModel.link) {
 
         }
 
-        return view
+        return view!!
     }
 }

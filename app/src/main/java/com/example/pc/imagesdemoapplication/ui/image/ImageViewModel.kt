@@ -1,7 +1,7 @@
 package com.example.pc.imagesdemoapplication.ui.image
 
 import android.arch.lifecycle.ViewModel
-import com.example.pc.imagesdemoapplication.database.ImageRepository
+import com.example.pc.imagesdemoapplication.database.images.ImageRepository
 import com.example.pc.imagesdemoapplication.database.images.Image
 import io.reactivex.Observable
 

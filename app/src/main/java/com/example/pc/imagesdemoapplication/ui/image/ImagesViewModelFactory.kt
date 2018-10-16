@@ -2,7 +2,7 @@ package com.example.pc.imagesdemoapplication.ui.image
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.example.pc.imagesdemoapplication.database.ImageRepository
+import com.example.pc.imagesdemoapplication.database.images.ImageRepository
 
 /**
  * Created by Hasan.Awada on 10/15/2018.
